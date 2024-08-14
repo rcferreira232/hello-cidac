@@ -1,12 +1,12 @@
-import './App.css'
+import theme from './styles/theme'
+import { ThemeProvider } from 'styled-components'
+import RoutesComponent from './routes'
 
 function App() {
   return (
-    <>
-      <div>
-        <h1>Hello Cidac</h1>
-      </div>
-    </>
+    <ThemeProvider theme={theme}>
+      <RoutesComponent />
+    </ThemeProvider>
   )
 }
 
