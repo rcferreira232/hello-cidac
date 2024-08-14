@@ -1,0 +1,163 @@
+:root {
+  --ev-c-white: #ffffff;
+  --ev-c-white-soft: #f8f8f8;
+  --ev-c-white-mute: #f2f2f2;
+
+  --ev-c-black: #1b1b1f;
+  --ev-c-black-soft: #222222;
+  --ev-c-black-mute: #282828;
+
+  --ev-c-gray-1: #515c67;
+  --ev-c-gray-2: #414853;
+  --ev-c-gray-3: #32363f;
+
+  --ev-c-text-1: rgba(255, 255, 245, 0.86);
+  --ev-c-text-2: rgba(235, 235, 245, 0.6);
+  --ev-c-text-3: rgba(235, 235, 245, 0.38);
+
+  --ev-button-alt-border: transparent;
+  --ev-button-alt-text: var(--ev-c-text-1);
+  --ev-button-alt-bg: var(--ev-c-gray-3);
+  --ev-button-alt-hover-border: transparent;
+  --ev-button-alt-hover-text: var(--ev-c-text-1);
+  --ev-button-alt-hover-bg: var(--ev-c-gray-2);
+
+  --color-background: var(--ev-c-black);
+  --color-background-soft: var(--ev-c-black-soft);
+  --color-background-mute: var(--ev-c-black-mute);
+  --color-text: var(--ev-c-text-1);
+
+  /* border radius */
+  --borderRadius-p: 4px; /* elementos pequenos */
+  --borderRadius-m: 8px; /* elementos médios */
+  --borderRadius-g: 12px; /* elementos grandes */
+  --borderRadius-xg: 16px; /* elementos muito grandes */
+
+  /* box shadow*/
+  --shadow-1: 1px 1px 1px 0px rgba(0, 0, 0, 0.1); /*Para cards e elementos próximos à base, (Tabelas e planilhas)*/
+  --shadow-2: 2px 2px 2px 0px rgba(0, 0, 0, 0.1); /*Para botões acima de cards ou outros elementos.*/
+  --shadow-3: 4px 4px 4px 0px rgba(0, 0, 0, 0.1); /*Para menus de rodapé*/
+  --shadow-4: 6px 6px 6px 0px rgba(0, 0, 0, 0.1); /*Usado em Floatting buttons*/
+  --shadow-5: 8px 8px 8px 0px rgba(0, 0, 0, 0.1); /*Usado para menus de topo e laterais*/
+  --shadow-6: 12px 12px 12px 0px rgba(0, 0, 0, 0.1); /*Usado para estados do Floatting button*/
+  --shadow-7: 16px 16px 16px 0px rgba(0, 0, 0, 0.1); /*Usado nos modais*/
+  --shadow-8: 24px 24px 24px 0px rgba(0, 0, 0, 0.1); /*Usado para pickers*/
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  user-select: none;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 
+  titles
+    h1 - Usado para títulos com grande destaque
+    h2 - Usado para títulos com médio/grande destaque
+    h3 - Usado para títulos com médio/pequeno destaque
+    h4 - Usado para títulos com pequeno destaque
+    h5 - Usado para títulos com leve destaque
+*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  color: var(--black-800);
+  font-style: normal;
+  text-transform: capitalize;
+}
+h1 {
+  font-size: 34px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
+}
+
+/* 
+  paragraphs
+    bigText - Usado para criação de massas de texto corrido ao longo das telas da interface. Esse é o parágrafo comum.
+    normalText - Usado para criação de massas de texto corrido ao longo das telas da interface. Esse é o parágrafo menor.
+    smallText - Usado principalmente para legendas e elementos de menor importância.
+    miniText - Usado para textos extremamente pequenos da interface. Utilize para os elementos menos importantes.
+*/
+p {
+  color: var(--balck-800);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+}
+.bigText {
+  font-size: 16px;
+  line-height: 32px;
+}
+.normalText {
+  font-size: 14px;
+  line-height: 32px;
+}
+.smallText {
+  font-size: 12px;
+  line-height: 24px;
+}
+.miniText {
+  font-size: 10px;
+  line-height: 16px;
+}
+
+code {
+  font-weight: 600;
+  padding: 3px 5px;
+  border-radius: 2px;
+  background-color: var(--color-background-mute);
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
+  font-size: 85%;
+}
+
+.input-grey {
+  background-color: rgb(193, 184, 184);
+  color: var(--ev-c-text-1);
+  border-radius: var(--borderRadius-m);
+}
