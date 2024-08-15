@@ -1,4 +1,3 @@
-# Generate a Dockerfile for react app
 FROM node:20-alpine
 
 WORKDIR /frontend
