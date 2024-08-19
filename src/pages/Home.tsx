@@ -1,9 +1,27 @@
 import styled from 'styled-components'
+import { HelloCidacService } from '../service/helloCidac'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [helloCidac, setHelloCidac] = useState<string>('')
+
+  async function getHelloCidac() {
+    try {
+      const response = await HelloCidacService.getHelloCidac()
+      setHelloCidac(response.hello)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getHelloCidac()
+  }, [])
+
   return (
     <HomeContainer>
       <Title>Hello Cidac</Title>
+      <h2>{helloCidac ? helloCidac : 'Notworking'}</h2>
     </HomeContainer>
   )
 }
