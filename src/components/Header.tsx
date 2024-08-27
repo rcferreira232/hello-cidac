@@ -8,6 +8,10 @@ import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import MoreIcon from '@mui/icons-material/MoreVert'
 
+interface HeaderProps {
+  toggleNavBar: () => void
+}
+
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   alignItems: 'flex-start',
   paddingTop: theme.spacing(1),
@@ -18,7 +22,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   },
 }))
 
-export default function Header() {
+export default function Header({ toggleNavBar }: HeaderProps) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -30,6 +34,7 @@ export default function Header() {
       >
         <StyledToolbar>
           <IconButton
+            onClick={toggleNavBar}
             size='large'
             edge='start'
             color='inherit'

@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 import { HelloCidacService } from '../service/helloCidac'
 import { useEffect, useState } from 'react'
-import NavBar from '../components/Header'
+import Header from '../components/Header'
+import NavBar from '../components/NavBar'
 
 export default function Home() {
   const [helloCidac, setHelloCidac] = useState<string>('')
+  const [toggleNavBar, setToggleNavBar] = useState<boolean>(false)
+
+  function handleToggleNavBar() {
+    setToggleNavBar(!toggleNavBar)
+  }
 
   async function getHelloCidac() {
     try {
@@ -22,10 +28,11 @@ export default function Home() {
   return (
     <HomeContainer>
       <NavBarContainer>
-        <NavBar />
+        <Header toggleNavBar={handleToggleNavBar} />
       </NavBarContainer>
       <Title>Hello Cidac</Title>
       <h2>{helloCidac ? helloCidac : 'Notworking'}</h2>
+      <NavBar isOpen={toggleNavBar} toggleNavBar={handleToggleNavBar} />
     </HomeContainer>
   )
 }
