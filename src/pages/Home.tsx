@@ -30,8 +30,10 @@ export default function Home() {
       <NavBarContainer>
         <Header toggleNavBar={handleToggleNavBar} />
       </NavBarContainer>
-      <Title>Hello Cidac</Title>
-      <h2>{helloCidac ? helloCidac : 'Notworking'}</h2>
+      <CidacWrapper>
+        <Title>Hello Cidac</Title>
+        <h2>{helloCidac ? helloCidac : 'Notworking'}</h2>
+      </CidacWrapper>
       <NavBar isOpen={toggleNavBar} toggleNavBar={handleToggleNavBar} />
     </HomeContainer>
   )
@@ -48,6 +50,14 @@ const NavBarContainer = styled.div`
   width: 100%;
   height: 8rem;
   display: flex;
+`
+const CidacWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0 3rem;
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
 `
 
 const Title = styled.h1`
